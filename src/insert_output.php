@@ -20,10 +20,12 @@
     <hr><br>
     <?php
         $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->prepare('select title_id from title where title_name=?');
-        $sql->execute([$_POSt['title']]);
-        $sql2=$pdo->prepare('insert into kyara(title_id, kyara_name, kyara_explanation) value(?,?,?)');
-        $sql2->execute([$sql, $_POST['name'], $_POST['explanation']]);
+        $sql=$pdo->prepare('select * from title where title_name=?');
+        $sql->execute([$_POST['title']]);
+        foreach($sql as $row){
+            $sql2=$pdo->prepare('insert into kyara(title_id, kyara_name, kyara_explanation) value(?,?,?)');
+            $sql2->execute([$row['title_id'], $_POST['name'], $_POST['explanation']]);
+        }
     ?>
     <h2>登録完了！</h2>
 </body>
