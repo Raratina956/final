@@ -28,7 +28,7 @@
         }
         echo '</select><br>';
         echo '名前　　：<input type="text" name="name"><br>';
-        echo '説明　　：<textarea cols="50" rows="5" name="explanation"></textarea><br>';
+        echo '説明　　：<textarea cols="50" rows="10" name="explanation"></textarea><br>';
         echo '<button type = "submit">登録</button>';
     ?>
     </form>
