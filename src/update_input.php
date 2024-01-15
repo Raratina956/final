@@ -33,7 +33,7 @@
                 echo '<a href="', $row2['title_link'], '" target="_blank">', $row2['title_name'],'</a>：';
             }
             echo $row['kyara_name'], '<br>';
-            echo $row['kyara_explanation'];
+            echo '<div class="explanation">',$row['kyara_explanation'], '</div>';
             echo '<a href = "update_middle.php?id=', $row['kyara_id'], '">更新</a>';
             echo '<br><br>';
         }

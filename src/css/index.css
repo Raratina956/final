@@ -1,7 +1,6 @@
 body{
     background-color: greenyellow;
     text-align: center;
-    line-break: strict
 }
 
 @keyframes sway {
@@ -25,4 +24,8 @@ h1{
     position: relative;
     left: 80%;
     top: 5%;
+}
+
+.explanation{
+    line-break: strict;
 }
