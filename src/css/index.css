@@ -1,5 +1,7 @@
 body{
     background-color: greenyellow;
+    text-align: center;
+    line-break: strict
 }
 
 @keyframes sway {
@@ -17,4 +19,10 @@ body{
 h1{
     text-align: center;
     animation: sway 2s infinite ease-in-out;
+}
+
+.top{
+    position: relative;
+    left: 80%;
+    top: 5%;
 }

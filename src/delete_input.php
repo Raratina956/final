@@ -35,7 +35,7 @@
             echo $row['kyara_name'], '<br>';
             echo $row['kyara_explanation'];
             echo '<a href = "delete_output.php?id=', $row['kyara_id'], '">削除</a>';
-            echo '<br><br>';
+            echo '<br>';
         }
     ?>
     </form>
