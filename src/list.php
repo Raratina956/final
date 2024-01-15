@@ -17,7 +17,9 @@
 </head>
 <body>
     <h1>アニメキャラ一覧</h1>
-    <a href="#" onclick="history.back()">トップへ戻る</a>
+    <div class = "top">
+        <a href="index.php">トップへ戻る</a>
+    </div>
     <hr><br>
     <?php
         $pdo=new PDO($connect,USER,PASS);

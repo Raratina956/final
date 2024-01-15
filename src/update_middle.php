@@ -19,8 +19,10 @@
     echo '<form action="update_output.php?id=', $_GET['id'], '" method="post">';
     ?>
     <h1>アニメキャラ更新</h1>
-    <a href="index.php">トップへ戻る</a><br>
-    <a href="#" onclick="history.back()">前ページへ戻る</a>
+    <div class = "top">
+        <a href="index.php">トップへ戻る</a>
+        <a href="#" onclick="history.back()">前ページへ戻る</a>
+    </div>
     <hr><br>
     <?php
         $pdo=new PDO($connect,USER,PASS);

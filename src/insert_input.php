@@ -18,7 +18,9 @@
 <body>
     <form action="insert_output.php" method="post">
     <h1>アニメキャラ登録</h1>
-    <a href="#" onclick="history.back()">トップへ戻る</a>
+    <div class = "top">
+        <a href="index.php">トップへ戻る</a>
+    </div>
     <hr><br>
     <?php
         $pdo=new PDO($connect,USER,PASS);
