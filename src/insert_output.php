@@ -20,11 +20,22 @@
     <hr><br>
     <?php
         $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->prepare('select * from title where title_name=?');
-        $sql->execute([$_POST['title']]);
-        foreach($sql as $row){
-            $sql2=$pdo->prepare('insert into kyara(title_id, kyara_name, kyara_explanation) value(?,?,?)');
-            $sql2->execute([$row['title_id'], $_POST['name'], $_POST['explanation']]);
+        if($_POST['title'] == "追加"){
+            $sql=$pdo->prepare('insert into title value(null,?,?)');
+            $sql->execute([$_POST['title_name'], $_POST['url']]);
+            $sql2=$pdo->prepare('select * from title where title_name=?');
+            $sql2->execute([$_POST['title_name']]);
+            foreach($sql2 as $row){
+                $sql3=$pdo->prepare('insert into kyara(title_id, kyara_name, kyara_explanation) value(?,?,?)');
+                $sql3->execute([$row['title_id'], $_POST['name'], $_POST['explanation']]);
+            }
+        }else{
+            $sql=$pdo->prepare('select * from title where title_name=?');
+            $sql->execute([$_POST['title']]);
+            foreach($sql as $row){
+                $sql2=$pdo->prepare('insert into kyara(title_id, kyara_name, kyara_explanation) value(?,?,?)');
+                $sql2->execute([$row['title_id'], $_POST['name'], $_POST['explanation']]);
+            }
         }
     ?>
     <h2>登録完了！</h2>
