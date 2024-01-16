@@ -27,31 +27,40 @@
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->query('select * from title');
         echo 'タイトル：<select name="title">';
-        echo '<option value=""></option>';
         foreach($sql as $row){
             echo '<option value="', $row['title_name'] ,'">', $row['title_name'] ,'</option>';
         }
         echo '<input type="submit" value="検索"><br>';
-        if(isset($_POST['keyword'])){
+        if(isset($_POST['title'])){
+            echo $_POST['title'];
             $sql4=$pdo->prepare('select * from title where title_name=?');
-            $pdo->execute([$_POST['titile']]);
+            $sql4->execute([$_POST['title']]);
             foreach($sql4 as $row3){
                 $sql3=$pdo->prepare('select * from kyara where title_id=?');
-                $pdo->execute([$_row3['title_id']]);
+                $sql3->execute([$row3['title_id']]);
             }
         }else{
             $sql3=$pdo->query('select * from kyara');
         }
-        foreach($sql3 as $row){
-            $sql2=$pdo->prepare('select * from title where title_id=?');
-            $sql2->execute([$row['title_id']]);
-            echo $row['kyara_id'], '：';
-            foreach($sql2 as $row2){
-                echo '<a href="', $row2['title_link'], '" target="_blank">', $row2['title_name'],'</a>：';
+        if(is_null($sql3)){
+            echo '<h2>該当キャラなし</h2>';
+        }else if(isset($sql3)){
+            echo '<div class="flex-box">';
+            foreach($sql3 as $row){
+                echo '<div class="flex-box2">';
+                echo '<div class="flex-item">';
+                $sql2=$pdo->prepare('select * from title where title_id=?');
+                $sql2->execute([$row['title_id']]);
+                echo $row['kyara_id'], '：';
+                foreach($sql2 as $row2){
+                    echo '<a href="', $row2['title_link'], '" target="_blank">', $row2['title_name'],'</a><br>';
+                }
+                echo $row['kyara_name'], '<br>';
+                echo '</div>';
+                echo '<div class="allexplanation"><div class="explanation">',$row['kyara_explanation'], '</div></div>';
+                echo '</div>';
             }
-            echo $row['kyara_name'], '<br>';
-            echo '<div class="explanation">',$row['kyara_explanation'], '</div>';
-            echo '<br><br>';
+            echo '</div>';
         }
     ?>
     </form>

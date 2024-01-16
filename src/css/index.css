@@ -26,6 +26,30 @@ h1{
     top: 5%;
 }
 
+.flex-box{
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.flex-box2{
+    width: 100%;
+    padding: 10px;
+}
+
+.flex-item {
+    float: left;
+    width: 30%;
+    background-color: rgba(153, 255, 0, 0.5);
+}
+
+.allexplanation{
+    float: right;
+    width: 70%;
+    background-color: none;
+}
+
 .explanation{
-    line-break: strict;
+    background-color: rgba(0,255,255,0.5);
 }
