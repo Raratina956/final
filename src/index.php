@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>アニメキャラクター管理サイト</h1>
-    <input type="button" onClick="document.location.href='list.php'" value="一覧"/>
-    <input type="button" onClick="document.location.href='insert_input.php'" value="登録"/>
-    <input type="button" onClick="document.location.href='update_input.php'" value="更新"/>
-    <input type="button" onClick="document.location.href='delete_input.php'" value="削除"/>
+    <a href="list.php" class="btn btn-flat"><span>一覧</span></a>
+    <a href="insert_input.php" class="btn btn-flat"><span>登録</span></a>
+    <a href="update_input.php" class="btn btn-flat"><span>更新</span></a>
+    <a href="delete_input.php" class="btn btn-flat"><span>削除</span></a>
 </body>
 </html>

@@ -55,7 +55,7 @@
                     echo '<a href="', $row2['title_link'], '" target="_blank">', $row2['title_name'],'</a><br>';
                 }
                 echo $row['kyara_name'], '<br>';
-                echo '<a href = "update_middle.php?id=', $row['kyara_id'], '">更新</a>';
+                echo '<a href = "update_middle.php?id=', $row['kyara_id'], '" class="btn btn-flat"><span>更新</span></a>';
                 echo '</div>';
                 echo '<div class="allexplanation"><div class="explanation">',$row['kyara_explanation'], '</div></div>';
                 echo '</div>';

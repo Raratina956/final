@@ -55,7 +55,7 @@
                     echo '<a href="', $row2['title_link'], '" target="_blank">', $row2['title_name'],'</a><br>';
                 }
                 echo $row['kyara_name'], '<br>';
-                echo '<a href = "delete_output.php?id=', $row['kyara_id'], '">削除</a>';
+                echo '<a href = "delete_output.php?id=', $row['kyara_id'], '" class="btn btn-flat"><span>削除</span></a>';
                 echo '</div>';
                 echo '<div class="allexplanation"><div class="explanation">',$row['kyara_explanation'], '</div></div>';
                 echo '</div>';

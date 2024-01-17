@@ -33,8 +33,8 @@
         }
         echo '</select><br>';
         echo '　名前　：<input type="text" name="name"><br>';
-        echo 'タイトル：<input type="text" name="title_name" placeholder="新規追加のみ入力してください"><br>';
-        echo ' ＵＲＬ ：<input type="text" name="url" placeholder="新規追加のみ入力してください"><br>';
+        echo 'タイトル：<input type="text" name="title_name" placeholder="新規追加のみ入力"><br>';
+        echo ' ＵＲＬ ：<input type="text" name="url" placeholder="新規追加のみ入力"><br>';
         echo '　説明　：<textarea cols="50" rows="10" name="explanation"></textarea><br>';
         echo '<button type = "submit">登録</button>';
     ?>
